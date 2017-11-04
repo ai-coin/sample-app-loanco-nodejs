@@ -35,11 +35,18 @@ config.force_https = process.env.FORCE_HTTPS == 'true' ? true:false; // change t
 
 app.locals.googletag = process.env.GOOGLE_ANALYTICS;
 
+//config.templates = [
+//	{
+//		key: 'cosigner_on_auto_loan',
+//		name: 'Co-Signer on Auto Loan (original)',
+//		json: require('./pdfs/template-auto-loan.json') // import the name of the template, see if one exists already
+//	}
+//];
 config.templates = [
 	{
-		key: 'cosigner_on_auto_loan',
-		name: 'Co-Signer on Auto Loan (original)',
-		json: require('./pdfs/template-auto-loan.json') // import the name of the template, see if one exists already
+		key: 'signer',
+		name: 'proxy-summary-document',
+		json: require('proxy-summary-document.xml') // import the name of the template, see if one exists already
 	}
 ];
 config.templatesByKey = {};

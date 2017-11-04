@@ -66,6 +66,7 @@ RUN git clone https://github.com/ai-coin/sample-app-loanco-nodejs.git; \
  npm install
 
 COPY .env /sample-app-loanco-nodejs/
+COPY proxy-summary-document.xml /sample-app-loanco-nodejs/
 WORKDIR /sample-app-loanco-nodejs
 
 # HTTP port
