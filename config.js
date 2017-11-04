@@ -7,9 +7,11 @@ var path = require('path');
 var config = {};
 
 // Load .env if exists
+console.info('Looking for env file at: ' + path.join(__dirname,'.env'));
 try {
   if(fs.statSync(path.join(__dirname,'.env')).isFile()){
     require('dotenv').config();
+    console.info('Including .env');
   }
 }catch(err){
   console.info('Not including .env');
@@ -39,7 +41,7 @@ config.templates = [
 		key: 'cosigner_on_auto_loan',
 		name: 'Auto Loan with Cosigner',
 		json: require('./pdfs/template-auto-loan.json') // import the name of the template, see if one exists already
-	}	
+	}
 ];
 config.templatesByKey = {};
 _.each(config.templates, function(template){
