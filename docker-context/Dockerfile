@@ -63,21 +63,6 @@ RUN echo rebuild from here 13
 RUN git clone https://github.com/ai-coin/sample-app-loanco-nodejs.git; \
  cd sample-app-loanco-nodejs; \
  git checkout aiblockchain; \
- #npm install express \
- #npm install express-handlebars \
- #npm install serve-favicon \
- #npm install morgan \
- #npm install cookie-parser \
- #npm install lodash \
- #npm install moment \
- #npm install docusign-esign \
- #npm install q \
- #npm install nedb \
- #npm install express-session \
- #npm install marked \
- #npm install async \
- #npm install googlemaps \
- #npm install dotenv \
  npm install
 
 COPY .env /sample-app-loanco-nodejs/
