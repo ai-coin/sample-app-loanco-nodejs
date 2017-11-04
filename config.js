@@ -10,6 +10,7 @@ var config = {};
 try {
   if(fs.statSync(path.join(__dirname,'.env')).isFile()){
     require('dotenv').config();
+    console.info('Including .env from ' + path.join(__dirname,'.env'));
   }
 }catch(err){
   console.info('Not including .env');
@@ -39,7 +40,7 @@ config.templates = [
 		key: 'cosigner_on_auto_loan',
 		name: 'Auto Loan with Cosigner',
 		json: require('./pdfs/template-auto-loan.json') // import the name of the template, see if one exists already
-	}	
+	}
 ];
 config.templatesByKey = {};
 _.each(config.templates, function(template){
@@ -69,7 +70,7 @@ config.loginToDocuSign = function(next){
 	var authApi = new docusign.AuthenticationApi();
 
 	// login has some optional parameters we can set
-	var loginOps = new authApi.LoginOptions();
+	var loginOps = {};
 	loginOps.setApiPassword('true'); // include a replacement API password we could use in subsequent authentication requests
 	loginOps.setIncludeAccountIdGuid('true'); // gives us our long guid back, in case we used the shorter integer account ID
 	authApi.login(loginOps, function (err, loginInfo, response) {
