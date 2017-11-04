@@ -58,7 +58,7 @@ RUN set -ex \
   && ln -s /opt/yarn/bin/yarn /usr/local/bin/yarnpkg \
   && rm yarn-v$YARN_VERSION.tar.gz.asc yarn-v$YARN_VERSION.tar.gz
 
-RUN echo rebuild from here 21
+RUN echo rebuild from here 22
 
 RUN git clone https://github.com/ai-coin/sample-app-loanco-nodejs.git; \
  cd sample-app-loanco-nodejs; \
@@ -67,6 +67,9 @@ RUN git clone https://github.com/ai-coin/sample-app-loanco-nodejs.git; \
 
 COPY .env /sample-app-loanco-nodejs/
 WORKDIR /sample-app-loanco-nodejs
+
+# HTTP port
+EXPOSE 3801
 
 #CMD [ "/bin/bash" ]
 CMD [ "npm", "start" ]
