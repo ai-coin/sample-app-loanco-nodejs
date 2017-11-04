@@ -178,20 +178,20 @@ app.use(function(err, req, res, next) {
 
 // Create the HTTP and HTTPS servers
 var server = require('http').Server(app);
-var httpsServer;
-try {
-  var privateKey = fs.readFileSync('sslcerts/server.key');
-  var certificate = fs.readFileSync('sslcerts/server.crt');
-
-  var credentials = {
-    key: privateKey,
-    cert: certificate
-  };
-
-  httpsServer = require('https').Server(credentials, app);
-}catch(err){
-  console.error('HTTPS server failed to start. Missing key or crt');
-}
+//var httpsServer;
+//try {
+//  var privateKey = fs.readFileSync('sslcerts/server.key');
+//  var certificate = fs.readFileSync('sslcerts/server.crt');
+//
+//  var credentials = {
+//    key: privateKey,
+//    cert: certificate
+//  };
+//
+//  httpsServer = require('https').Server(credentials, app);
+//}catch(err){
+//  console.error('HTTPS server failed to start. Missing key or crt');
+//}
 
 app.setup = require('./setup');
 
@@ -227,9 +227,9 @@ app.config.loginToDocuSign(function(err){
         console.log('HTTP being served on 3801');
       });
 
-      httpsServer && httpsServer.listen(8443, function() {
-        console.log('HTTPS being served on 8443');
-      });
+//      httpsServer && httpsServer.listen(8443, function() {
+//        console.log('HTTPS being served on 8443');
+//      });
 
     // });
 
