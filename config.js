@@ -62,6 +62,7 @@ config.loginToDocuSign = function(next){
 	  Password: config.auth.Password,
 	  IntegratorKey: config.auth.IntegratorKey
 	});
+        console.info('creds: ' + creds);
 	apiClient.addDefaultHeader('X-DocuSign-Authentication', creds);
 
 	// assign api client to the Configuration object
@@ -69,6 +70,7 @@ config.loginToDocuSign = function(next){
 
 	// login call available off the AuthenticationApi
 	var authApi = new docusign.AuthenticationApi();
+        console.info('authApi: ' + authApi);
 
 	// login has some optional parameters we can set
 	var loginOps = new authApi.LoginOptions();
