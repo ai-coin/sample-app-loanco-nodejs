@@ -10,8 +10,8 @@ var config = {};
 console.info('Looking for env file at: ' + path.join(__dirname,'.env'));
 try {
   if(fs.statSync(path.join(__dirname,'.env')).isFile()){
-    require('dotenv').config();
     console.info('Including .env');
+    require('dotenv').config();
   }
 }catch(err){
   console.info('Not including .env');
