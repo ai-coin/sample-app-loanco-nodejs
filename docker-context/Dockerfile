@@ -61,6 +61,7 @@ RUN set -ex \
 RUN echo rebuild from here 8
 
 RUN git clone https://github.com/ai-coin/sample-app-loanco-nodejs.git
+RUN git checkout aiblockchain
 RUN cd sample-app-loanco-nodejs
 RUN npm install express \
  npm install express-handlebars \
