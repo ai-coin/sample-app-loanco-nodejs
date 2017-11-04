@@ -58,28 +58,27 @@ RUN set -ex \
   && ln -s /opt/yarn/bin/yarn /usr/local/bin/yarnpkg \
   && rm yarn-v$YARN_VERSION.tar.gz.asc yarn-v$YARN_VERSION.tar.gz
 
-RUN echo rebuild from here 8
+RUN echo rebuild from here 13
 
-RUN git clone https://github.com/ai-coin/sample-app-loanco-nodejs.git
-RUN git checkout aiblockchain
-RUN cd sample-app-loanco-nodejs
-RUN npm install express \
- npm install express-handlebars \
- npm install serve-favicon \
- npm install morgan \
- npm install cookie-parser \
- npm install lodash \
- npm install moment \
- npm install docusign-esign \
- npm install q \
- npm install nedb \
- npm install express-session \
- npm install marked \
- npm install async \
- npm install googlemaps \
- npm install dotenv \
+RUN git clone https://github.com/ai-coin/sample-app-loanco-nodejs.git; \
+ cd sample-app-loanco-nodejs; \
+ git checkout aiblockchain; \
+ #npm install express \
+ #npm install express-handlebars \
+ #npm install serve-favicon \
+ #npm install morgan \
+ #npm install cookie-parser \
+ #npm install lodash \
+ #npm install moment \
+ #npm install docusign-esign \
+ #npm install q \
+ #npm install nedb \
+ #npm install express-session \
+ #npm install marked \
+ #npm install async \
+ #npm install googlemaps \
+ #npm install dotenv \
  npm install
-
 
 COPY .env /sample-app-loanco-nodejs/
 WORKDIR /sample-app-loanco-nodejs

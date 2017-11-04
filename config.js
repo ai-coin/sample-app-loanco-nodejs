@@ -71,8 +71,8 @@ config.loginToDocuSign = function(next){
 
 	// login has some optional parameters we can set
 	var loginOps = {};
-	loginOps.setApiPassword('true'); // include a replacement API password we could use in subsequent authentication requests
-	loginOps.setIncludeAccountIdGuid('true'); // gives us our long guid back, in case we used the shorter integer account ID
+	loginOps.apiPassword = 'true'; // include a replacement API password we could use in subsequent authentication requests
+	loginOps.includeAccountIdGuid = 'true'; // gives us our long guid back, in case we used the shorter integer account ID
 	authApi.login(loginOps, function (err, loginInfo, response) {
 		if (err) {
 			console.error(err.response ? err.response.error : err);
