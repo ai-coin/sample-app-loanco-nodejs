@@ -38,7 +38,7 @@ app.locals.googletag = process.env.GOOGLE_ANALYTICS;
 config.templates = [
 	{
 		key: 'cosigner_on_auto_loan',
-		name: 'Auto Loan with Cosigner',
+		name: 'Co-Signer on Auto Loan (original)',
 		json: require('./pdfs/template-auto-loan.json') // import the name of the template, see if one exists already
 	}
 ];
