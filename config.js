@@ -45,8 +45,7 @@ app.locals.googletag = process.env.GOOGLE_ANALYTICS;
 config.templates = [
 	{
 		key: 'signer',
-		name: 'proxy-summary-document',
-		json: require('proxy-summary-document.xml') // import the name of the template, see if one exists already
+		name: 'proxy-summary-document'
 	}
 ];
 config.templatesByKey = {};
