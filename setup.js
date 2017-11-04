@@ -23,6 +23,8 @@ setup.Templates = function(next){
       promises.push(templateDef.promise);
 
       var template = _.find(templateList.envelopeTemplates, {name: templateObj.name});
+      console.log('template: ' + template);
+      console.log('templateId: ' + template.templateId);
 
       if(template){
         app.config.templatesByKey[templateObj.key].id = template.templateId;
