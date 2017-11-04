@@ -58,9 +58,6 @@ RUN set -ex \
   && ln -s /opt/yarn/bin/yarn /usr/local/bin/yarnpkg \
   && rm yarn-v$YARN_VERSION.tar.gz.asc yarn-v$YARN_VERSION.tar.gz
 
-
-RUN echo rebuild from here 5
-
 RUN git clone https://github.com/ai-coin/sample-app-loanco-nodejs.git
 RUN cd sample-app-loanco-nodejs
 RUN npm install express \
@@ -79,6 +76,9 @@ RUN npm install express \
  npm install googlemaps \
  npm install dotenv \
  npm install
+
+
+RUN echo rebuild from here 7
 
 COPY .env /sample-app-loanco-nodejs/
 WORKDIR /sample-app-loanco-nodejs
